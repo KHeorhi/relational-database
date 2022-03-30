@@ -44,12 +44,29 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
+-- Name: galaxy; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.galaxy (
+    galaxy_id numeric NOT NULL,
+    name character varying,
+    galaxy_types_id numeric NOT NULL,
+    description text,
+    is_spherical boolean,
+    age_in_million_of_years integer,
+    distance_from_earth integer
+);
+
+
+ALTER TABLE public.galaxy OWNER TO freecodecamp;
+
+--
 -- Name: galaxy_types; Type: TABLE; Schema: public; Owner: freecodecamp
 --
 
 CREATE TABLE public.galaxy_types (
-    galaxy_type_id numeric NOT NULL,
-    name text
+    galaxy_types_id numeric NOT NULL,
+    name character varying
 );
 
 
@@ -83,6 +100,12 @@ CREATE TABLE public.planet_types (
 ALTER TABLE public.planet_types OWNER TO freecodecamp;
 
 --
+-- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+
+
+--
 -- Data for Name: galaxy_types; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
@@ -101,11 +124,19 @@ ALTER TABLE public.planet_types OWNER TO freecodecamp;
 
 
 --
--- Name: galaxy_types galaxy_types_galaxy_type_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+-- Name: galaxy galaxy_galaxy_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.galaxy
+    ADD CONSTRAINT galaxy_galaxy_id_key UNIQUE (galaxy_id);
+
+
+--
+-- Name: galaxy_types galaxy_types_galaxy_types_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
 ALTER TABLE ONLY public.galaxy_types
-    ADD CONSTRAINT galaxy_types_galaxy_type_id_key UNIQUE (galaxy_type_id);
+    ADD CONSTRAINT galaxy_types_galaxy_types_id_key UNIQUE (galaxy_types_id);
 
 
 --
