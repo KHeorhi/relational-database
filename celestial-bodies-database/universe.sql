@@ -66,11 +66,27 @@ ALTER TABLE public.galaxy OWNER TO freecodecamp;
 
 CREATE TABLE public.galaxy_types (
     galaxy_types_id numeric NOT NULL,
-    name character varying
+    name character varying,
+    description text
 );
 
 
 ALTER TABLE public.galaxy_types OWNER TO freecodecamp;
+
+--
+-- Name: moon; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.moon (
+    moon_id numeric NOT NULL,
+    planet_id numeric NOT NULL,
+    name character varying,
+    age_in_million_of_years integer,
+    description text
+);
+
+
+ALTER TABLE public.moon OWNER TO freecodecamp;
 
 --
 -- Name: planet; Type: TABLE; Schema: public; Owner: freecodecamp
@@ -93,11 +109,28 @@ ALTER TABLE public.planet OWNER TO freecodecamp;
 
 CREATE TABLE public.planet_types (
     name character varying,
-    planet_type_id numeric NOT NULL
+    planet_type_id numeric NOT NULL,
+    description text
 );
 
 
 ALTER TABLE public.planet_types OWNER TO freecodecamp;
+
+--
+-- Name: star; Type: TABLE; Schema: public; Owner: freecodecamp
+--
+
+CREATE TABLE public.star (
+    star_id numeric NOT NULL,
+    galaxy_id numeric NOT NULL,
+    name character varying,
+    age_in_million_of_years integer,
+    distance_from_earth integer,
+    description text
+);
+
+
+ALTER TABLE public.star OWNER TO freecodecamp;
 
 --
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
@@ -112,6 +145,12 @@ ALTER TABLE public.planet_types OWNER TO freecodecamp;
 
 
 --
+-- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+
+
+--
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
@@ -119,6 +158,12 @@ ALTER TABLE public.planet_types OWNER TO freecodecamp;
 
 --
 -- Data for Name: planet_types; Type: TABLE DATA; Schema: public; Owner: freecodecamp
+--
+
+
+
+--
+-- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
 
@@ -140,6 +185,14 @@ ALTER TABLE ONLY public.galaxy_types
 
 
 --
+-- Name: moon moon_moon_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.moon
+    ADD CONSTRAINT moon_moon_id_key UNIQUE (moon_id);
+
+
+--
 -- Name: planet planet_planet_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
 --
 
@@ -153,6 +206,14 @@ ALTER TABLE ONLY public.planet
 
 ALTER TABLE ONLY public.planet_types
     ADD CONSTRAINT planet_types_planet_type_id_key UNIQUE (planet_type_id);
+
+
+--
+-- Name: star star_star_id_key; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT star_star_id_key UNIQUE (star_id);
 
 
 --
