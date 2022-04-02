@@ -163,12 +163,44 @@ INSERT INTO public.galaxy_types VALUES (3, 'Неправильная', 8, 'им�
 -- Data for Name: moon; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.moon VALUES (1, 3, 'Луна', 5, 2030, 'есть невидимая сторона');
+INSERT INTO public.moon VALUES (2, 4, 'Фобос', 3, 2021, 'маленькое пугало');
+INSERT INTO public.moon VALUES (3, 2, '2002 VE', 1, 89, 'дружит с Венерой');
+INSERT INTO public.moon VALUES (4, 3, '2004 GU', 1, 23, 'может сбить МКС');
+INSERT INTO public.moon VALUES (5, 3, '2006 FV', 1, 89, 'передает привет пингвинам');
+INSERT INTO public.moon VALUES (6, 3, '2013 LX', 1, 23, 'дружит с космонавтом');
+INSERT INTO public.moon VALUES (7, 3, '2014 OL', 1, 89, 'дружит с Луной');
+INSERT INTO public.moon VALUES (8, 3, '2016 HO3', 1, 23, 'хочет солнечные очки');
+INSERT INTO public.moon VALUES (9, 3, 'Круитини', 1, 12, 'мечтает о французсой булочке');
+INSERT INTO public.moon VALUES (10, 3, '2010 TK', 1, 23, 'вулкан на орбите');
+INSERT INTO public.moon VALUES (11, 4, '1999 UJ', 1, 87, 'отдых после дефолта');
+INSERT INTO public.moon VALUES (12, 4, 'Эврика', 1, 32, 'видел Архимеда в ванной');
+INSERT INTO public.moon VALUES (13, 4, '1998 VF', 1, 1, 'дефолтный год');
+INSERT INTO public.moon VALUES (14, 4, '2007 NS', 1, 9, 'мюнхен');
+INSERT INTO public.moon VALUES (15, 4, '2001 DH', 1, 3, 'море голубое');
+INSERT INTO public.moon VALUES (16, 4, '2011 SC', 1, 2, 'гаваи');
+INSERT INTO public.moon VALUES (17, 4, '2011l SC', 1, 3, 'рубль');
+INSERT INTO public.moon VALUES (18, 4, '2011 SL', 1, 2, 'КВН');
+INSERT INTO public.moon VALUES (19, 5, 'Европа', 1, 4, 'юпитер');
+INSERT INTO public.moon VALUES (20, 5, 'Карме', 1, 5, 'электроника');
 
 
 --
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet VALUES (1, 1, 'Меркурий', false, 382, 0, 'первая планета Солнечной системы и наиболее экстремальный мир');
+INSERT INTO public.planet VALUES (2, 1, 'Венера', false, 949, 0, 'самая горячая планета Солнечной системы');
+INSERT INTO public.planet VALUES (3, 1, 'Земля', true, 1, 1, 'наша планета');
+INSERT INTO public.planet VALUES (4, 1, 'Марс', false, 53, 2, 'второе имя Красная планета');
+INSERT INTO public.planet VALUES (5, 1, 'Церера', false, 7, 0, 'расположена в поясе астероидов Марса и Юпитера');
+INSERT INTO public.planet VALUES (6, 1, 'Юпитер', false, 112, 67, 'год длится 11.8 лет');
+INSERT INTO public.planet VALUES (7, 1, 'Сатурн', false, 94, 62, 'оборот вокруг своей оси делает за 10.5 часов');
+INSERT INTO public.planet VALUES (8, 1, 'Уран', false, 39, 27, 'год длится 84 лет');
+INSERT INTO public.planet VALUES (9, 1, 'Нептун', false, 38, 14, 'атмосфера наполнена водородом, гелием, метаном');
+INSERT INTO public.planet VALUES (10, 1, 'Плутон', false, 9, 5, 'наибольшая карликовая планета');
+INSERT INTO public.planet VALUES (11, 1, 'Хаумеда', false, 38, 2, 'названа в честь гавайской богини');
+INSERT INTO public.planet VALUES (12, 1, 'Макемаке', false, 3, 0, 'второе имя Пасхальный Заяц');
 
 
 --
