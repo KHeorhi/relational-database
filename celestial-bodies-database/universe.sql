@@ -169,6 +169,9 @@ INSERT INTO public.galaxy_types VALUES (3, 'Неправильная', 8, 'им�
 -- Data for Name: planet_types; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet_types VALUES (1, 'Земные планеты', 4, 'скалистая поверхность');
+INSERT INTO public.planet_types VALUES (2, 'Газовые планеты', 4, 'состоят из газа');
+INSERT INTO public.planet_types VALUES (3, 'Карликовые планеты', 5, 'малы по размеру и встречаются различные объекты на их пути');
 
 
 --
