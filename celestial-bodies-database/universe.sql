@@ -142,6 +142,12 @@ ALTER TABLE public.star OWNER TO freecodecamp;
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy VALUES (1, 2, 'Млечный путь', true, 2000, 0, 'Это наша галактика.');
+INSERT INTO public.galaxy VALUES (2, 2, 'Большое Магелланово Облако', true, 2100, 700, 'Видима только в Южном полушарии');
+INSERT INTO public.galaxy VALUES (3, 2, 'Малое Магелланово Облако', true, 2030, 2700, 'Видима только в южном полушарии');
+INSERT INTO public.galaxy VALUES (4, 2, 'Галактика Андромеды', true, 2050, 3400, 'Также называется Туманностью Андромеды. Находится в созвездии Андромеды');
+INSERT INTO public.galaxy VALUES (5, 2, 'Омега Центавра', true, 2350, 3700, 'Не рассматривается как самостоятельная галактика. В скором времени будет поглощена Млечным Путем');
+INSERT INTO public.galaxy VALUES (6, 2, 'Галактика Треугольника', true, 2040, 5700, 'Наблюдение невооруженным глазом очень затруднено');
 
 
 --
