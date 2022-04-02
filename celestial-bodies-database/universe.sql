@@ -67,7 +67,7 @@ ALTER TABLE public.galaxy OWNER TO freecodecamp;
 CREATE TABLE public.galaxy_types (
     galaxy_types_id numeric NOT NULL,
     name character varying,
-    count_stars integer,
+    count_galaxy integer,
     description text NOT NULL
 );
 
@@ -148,6 +148,9 @@ ALTER TABLE public.star OWNER TO freecodecamp;
 -- Data for Name: galaxy_types; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy_types VALUES (1, 'Эллиптическая', 22, 'имееет форму эллипса');
+INSERT INTO public.galaxy_types VALUES (2, 'Спиральная', 70, 'имеет форму спирали с перемычкой в центре');
+INSERT INTO public.galaxy_types VALUES (3, 'Неправильная', 8, 'имеет неправильную форму');
 
 
 --
