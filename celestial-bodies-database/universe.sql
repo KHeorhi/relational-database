@@ -67,7 +67,7 @@ ALTER TABLE public.galaxy OWNER TO freecodecamp;
 CREATE TABLE public.galaxy_types (
     galaxy_types_id numeric NOT NULL,
     name character varying,
-    count_stars integer,
+    count_galaxy integer,
     description text NOT NULL
 );
 
@@ -142,12 +142,21 @@ ALTER TABLE public.star OWNER TO freecodecamp;
 -- Data for Name: galaxy; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy VALUES (1, 2, 'Млечный путь', true, 2000, 0, 'Это наша галактика.');
+INSERT INTO public.galaxy VALUES (2, 2, 'Большое Магелланово Облако', true, 2100, 700, 'Видима только в Южном полушарии');
+INSERT INTO public.galaxy VALUES (3, 2, 'Малое Магелланово Облако', true, 2030, 2700, 'Видима только в южном полушарии');
+INSERT INTO public.galaxy VALUES (4, 2, 'Галактика Андромеды', true, 2050, 3400, 'Также называется Туманностью Андромеды. Находится в созвездии Андромеды');
+INSERT INTO public.galaxy VALUES (5, 2, 'Омега Центавра', true, 2350, 3700, 'Не рассматривается как самостоятельная галактика. В скором времени будет поглощена Млечным Путем');
+INSERT INTO public.galaxy VALUES (6, 2, 'Галактика Треугольника', true, 2040, 5700, 'Наблюдение невооруженным глазом очень затруднено');
 
 
 --
 -- Data for Name: galaxy_types; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.galaxy_types VALUES (1, 'Эллиптическая', 22, 'имееет форму эллипса');
+INSERT INTO public.galaxy_types VALUES (2, 'Спиральная', 70, 'имеет форму спирали с перемычкой в центре');
+INSERT INTO public.galaxy_types VALUES (3, 'Неправильная', 8, 'имеет неправильную форму');
 
 
 --
@@ -166,12 +175,21 @@ ALTER TABLE public.star OWNER TO freecodecamp;
 -- Data for Name: planet_types; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.planet_types VALUES (1, 'Земные планеты', 4, 'скалистая поверхность');
+INSERT INTO public.planet_types VALUES (2, 'Газовые планеты', 4, 'состоят из газа');
+INSERT INTO public.planet_types VALUES (3, 'Карликовые планеты', 5, 'малы по размеру и встречаются различные объекты на их пути');
 
 
 --
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 1, 'Солнце', 2040, 158, 600, 'видно невооруженным взглядом');
+INSERT INTO public.star VALUES (2, 1, 'Сириус Большого Пса', 2040, 86000, 700, 'Видна в Южном получшарии');
+INSERT INTO public.star VALUES (3, 1, 'Канопус Киля', 2035, 310000, 460, 'Видна в Южном полушарии');
+INSERT INTO public.star VALUES (4, 1, 'Толиман', 2030, 43, 21, 'Видна в Южном полушарии');
+INSERT INTO public.star VALUES (5, 1, 'Арктур', 2030, 340, 21, 'Видна в Северном полушарии');
+INSERT INTO public.star VALUES (6, 1, 'Вега', 2002, 250, 34, 'Видна в Северном полушарии');
 
 
 --
@@ -268,6 +286,30 @@ ALTER TABLE ONLY public.star
 
 ALTER TABLE ONLY public.star
     ADD CONSTRAINT star_pkey PRIMARY KEY (star_id);
+
+
+--
+-- Name: moon moon_planet_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.moon
+    ADD CONSTRAINT moon_planet_id_fkey FOREIGN KEY (planet_id) REFERENCES public.planet(planet_id);
+
+
+--
+-- Name: planet planet_star_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet
+    ADD CONSTRAINT planet_star_id_fkey FOREIGN KEY (star_id) REFERENCES public.star(star_id);
+
+
+--
+-- Name: star star_galaxy_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT star_galaxy_id_fkey FOREIGN KEY (galaxy_id) REFERENCES public.galaxy(galaxy_id);
 
 
 --
