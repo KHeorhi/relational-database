@@ -184,6 +184,12 @@ INSERT INTO public.planet_types VALUES (3, 'Карликовые планеты'
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.star VALUES (1, 1, 'Солнце', 2040, 158, 600, 'видно невооруженным взглядом');
+INSERT INTO public.star VALUES (2, 1, 'Сириус Большого Пса', 2040, 86000, 700, 'Видна в Южном получшарии');
+INSERT INTO public.star VALUES (3, 1, 'Канопус Киля', 2035, 310000, 460, 'Видна в Южном полушарии');
+INSERT INTO public.star VALUES (4, 1, 'Толиман', 2030, 43, 21, 'Видна в Южном полушарии');
+INSERT INTO public.star VALUES (5, 1, 'Арктур', 2030, 340, 21, 'Видна в Северном полушарии');
+INSERT INTO public.star VALUES (6, 1, 'Вега', 2002, 250, 34, 'Видна в Северном полушарии');
 
 
 --
