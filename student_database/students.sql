@@ -185,28 +185,27 @@ ALTER TABLE ONLY public.students ALTER COLUMN student_id SET DEFAULT nextval('pu
 -- Data for Name: courses; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.courses VALUES (1, 'Data Structures and Algorithms');
 
 
 --
 -- Data for Name: majors; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.majors VALUES (1, 'Database Administration');
+INSERT INTO public.majors VALUES (12, 'Database Administration');
+INSERT INTO public.majors VALUES (13, 'Web Development');
+INSERT INTO public.majors VALUES (14, 'Data Science');
 
 
 --
 -- Data for Name: majors_courses; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.majors_courses VALUES (1, 1);
 
 
 --
 -- Data for Name: students; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.students VALUES (1, 'Rhea', 'Kellems', 1, 2.5);
 
 
 --
@@ -220,14 +219,14 @@ SELECT pg_catalog.setval('public.courses_course_id_seq', 1, true);
 -- Name: majors_major_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.majors_major_id_seq', 1, true);
+SELECT pg_catalog.setval('public.majors_major_id_seq', 14, true);
 
 
 --
 -- Name: students_student_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.students_student_id_seq', 1, false);
+SELECT pg_catalog.setval('public.students_student_id_seq', 1, true);
 
 
 --
