@@ -51,14 +51,36 @@ CREATE TABLE public.games (
     game_id integer NOT NULL,
     year integer NOT NULL,
     round character varying NOT NULL,
-    winner_goals integer NOT NULL,
-    opponent_goals integer NOT NULL,
     winner_id integer NOT NULL,
-    opponent_id integer NOT NULL
+    opponent_id integer NOT NULL,
+    winner_goals integer NOT NULL,
+    opponent_goals integer NOT NULL
 );
 
 
 ALTER TABLE public.games OWNER TO freecodecamp;
+
+--
+-- Name: games_game_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.games_game_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.games_game_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: games_game_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.games_game_id_seq OWNED BY public.games.game_id;
+
 
 --
 -- Name: teams; Type: TABLE; Schema: public; Owner: freecodecamp
@@ -73,6 +95,42 @@ CREATE TABLE public.teams (
 ALTER TABLE public.teams OWNER TO freecodecamp;
 
 --
+-- Name: teams_team_id_seq; Type: SEQUENCE; Schema: public; Owner: freecodecamp
+--
+
+CREATE SEQUENCE public.teams_team_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.teams_team_id_seq OWNER TO freecodecamp;
+
+--
+-- Name: teams_team_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: freecodecamp
+--
+
+ALTER SEQUENCE public.teams_team_id_seq OWNED BY public.teams.team_id;
+
+
+--
+-- Name: games game_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.games ALTER COLUMN game_id SET DEFAULT nextval('public.games_game_id_seq'::regclass);
+
+
+--
+-- Name: teams team_id; Type: DEFAULT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.teams ALTER COLUMN team_id SET DEFAULT nextval('public.teams_team_id_seq'::regclass);
+
+
+--
 -- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
@@ -82,6 +140,44 @@ ALTER TABLE public.teams OWNER TO freecodecamp;
 -- Data for Name: teams; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.teams VALUES (139, 'France');
+INSERT INTO public.teams VALUES (140, 'Croatia');
+INSERT INTO public.teams VALUES (141, 'Belgium');
+INSERT INTO public.teams VALUES (142, 'England');
+INSERT INTO public.teams VALUES (146, 'Russia');
+INSERT INTO public.teams VALUES (148, 'Sweden');
+INSERT INTO public.teams VALUES (150, 'Brazil');
+INSERT INTO public.teams VALUES (152, 'Uruguay');
+INSERT INTO public.teams VALUES (154, 'Colombia');
+INSERT INTO public.teams VALUES (156, 'Switzerland');
+INSERT INTO public.teams VALUES (158, 'Japan');
+INSERT INTO public.teams VALUES (160, 'Mexico');
+INSERT INTO public.teams VALUES (162, 'Denmark');
+INSERT INTO public.teams VALUES (164, 'Spain');
+INSERT INTO public.teams VALUES (166, 'Portugal');
+INSERT INTO public.teams VALUES (168, 'Argentina');
+INSERT INTO public.teams VALUES (169, 'Germany');
+INSERT INTO public.teams VALUES (170, 'Netherlands');
+INSERT INTO public.teams VALUES (174, 'Costa Rica');
+INSERT INTO public.teams VALUES (179, 'Chile');
+INSERT INTO public.teams VALUES (182, 'Nigeria');
+INSERT INTO public.teams VALUES (184, 'Algeria');
+INSERT INTO public.teams VALUES (187, 'Greece');
+INSERT INTO public.teams VALUES (190, 'United States');
+
+
+--
+-- Name: games_game_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
+--
+
+SELECT pg_catalog.setval('public.games_game_id_seq', 1, false);
+
+
+--
+-- Name: teams_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
+--
+
+SELECT pg_catalog.setval('public.teams_team_id_seq', 190, true);
 
 
 --
